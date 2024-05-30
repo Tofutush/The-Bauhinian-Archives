@@ -1,0 +1,107 @@
+@font-face {
+	font-family: courier prime;
+	src: url('./asset/font/CourierPrime-Regular.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-style: italic;
+	src: url('./asset/font/CourierPrime-Italic.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-weight: bold;
+	src: url('./asset/font/CourierPrime-Bold.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-style: italic;
+	font-weight: bold;
+	src: url('./asset/font/CourierPrime-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: jinkai;
+	src: url('./asset/font/jinkai.ttf');
+}
+
+@font-face {
+	font-family: klee one;
+	src: url('./asset/font/KleeOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: klee one semibold;
+	src: url('./asset/font/KleeOne-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: lexend;
+	src: url('../../asset/font/Lexend.ttf');
+}
+
+body {
+	background-color: #000;
+	font-size: 24px;
+	--nsa: #F01ACE;
+	--nsa-bg: #fbf3fa;
+	--nsa-color: #41282f;
+}
+
+.doc {
+	hyphens: auto;
+	margin: auto;
+	max-width: 800px;
+	overflow: hidden;
+	padding: 4rem;
+}
+
+.doc-content {
+	z-index: 1;
+}
+
+.doc-content h1 {
+	text-decoration: underline;
+}
+
+.doc-content p {
+	text-align: justify;
+	text-indent: 2em;
+	line-height: 1.5;
+}
+
+.doc-content .signature {
+	margin-top: 4rem;
+}
+
+.doc-content .signature p {
+	text-align: right;
+	text-indent: 0;
+}
+
+.nsa {
+	background-color: var(--nsa-bg);
+	color: var(--nsa-color);
+	display: flex;
+	font-family: courier prime;
+	justify-content: center;
+}
+
+.nsa .doc-content h1 {
+	color: var(--nsa);
+}
+
+.nsa-stamp {
+	align-self: center;
+	filter: opacity(.3);
+	position: absolute;
+	z-index: 0;
+}
+
+/* name colors */
+
+.firefly {
+	color: #E07250;
+}
