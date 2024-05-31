@@ -42,18 +42,30 @@
 	src: url('../../asset/font/Lexend.ttf');
 }
 
-body {
-	background-color: #000;
-	font-size: 24px;
+:root {
 	--nsa: #F01ACE;
 	--nsa-bg: #fbf3fa;
-	--nsa-color: #41282f;
+	--nsa-text: #41282f;
+	--nsa-select: #F561DC;
+	--sc: #20f;
+	--sc-bg: #f0eff8;
+	--sc-text: #2a273d;
+	--sc-select: #A294FF;
 }
+
+body {
+	background-color: #000;
+	font-size: 28px;
+	margin: 0;
+}
+
+/* docs */
 
 .doc {
 	hyphens: auto;
-	margin: auto;
+	margin: 4rem auto;
 	max-width: 800px;
+	min-height: 1130px;
 	overflow: hidden;
 	padding: 4rem;
 }
@@ -67,7 +79,6 @@ body {
 }
 
 .doc-content p {
-	text-align: justify;
 	text-indent: 2em;
 	line-height: 1.5;
 }
@@ -83,10 +94,15 @@ body {
 
 .nsa {
 	background-color: var(--nsa-bg);
-	color: var(--nsa-color);
+	color: var(--nsa-text);
 	display: flex;
 	font-family: courier prime;
 	justify-content: center;
+}
+
+.nsa *::selection {
+	background-color: var(--nsa-select);
+	color: #000;
 }
 
 .nsa .doc-content h1 {
@@ -95,13 +111,74 @@ body {
 
 .nsa-stamp {
 	align-self: center;
-	filter: opacity(.3);
+	filter: opacity(.1);
 	position: absolute;
 	z-index: 0;
 }
 
+.sc {
+	background-color: var(--sc-bg);
+	color: var(--sc-text);
+	font-family: josefin sans;
+}
+
+.sc *::selection {
+	background-color: var(--sc-select);
+	color: #000;
+}
+
+.sc-head {
+	align-items: center;
+	border-bottom: 4px solid var(--sc);
+	display: flex;
+	gap: 2rem;
+	justify-content: flex-end;
+	padding: 0 1rem 1rem 1rem;
+	user-select: none;
+}
+
+.sc-head > img {
+	height: 40px;
+}
+
+.sc-head > p {
+	color: var(--sc);
+	font-weight: 600;
+	letter-spacing: 3px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
 /* name colors */
+
+.name::selection {
+	color: #fff;
+}
 
 .firefly {
 	color: #E07250;
+}
+
+.hyrax {
+	color: #333;
+}
+
+.kangaroo {
+	color: #A36D1F;
+}
+
+.koala {
+	color: #7F8587;
+}
+
+.pegasus {
+	color: #21CEEA;
+}
+
+.bauhinia {
+	color: var(--nsa);
+}
+
+.starcorp {
+	color: var(--sc);
 }
