@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bauhinian Archives | Settings</title>
+<style>
 @font-face {
 	font-family: courier prime;
 	src: url('/asset/font/CourierPrime-Regular.ttf');
@@ -191,3 +198,55 @@ body {
 .starcorp {
 	color: var(--sc);
 }
+
+	.setting {
+	align-items: center;
+	border-bottom: 3px solid var(--color);
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	padding: 2rem 0;
+}
+
+.setting:last-child {
+	border-bottom: 0;
+}
+
+.label {
+	margin: 0;
+}
+
+.check {
+	aspect-ratio: 1;
+	background-color: #fff;
+	height: 2rem;
+	width: 2rem;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+	<h1 id="title">Settings</h1>
+	
+<div id="settings">
+	<div class="setting theme">
+		<p class="label">Change theme color.</p>
+		<div class="check"></div>
+	</div>
+	<div class="setting color">
+		<p class="label">Color in people's names (will definitely make text harder to read, but it's fun).</p>
+		<div class="check"></div>
+	</div>
+	<div class="setting highlight">
+		<p class="label">Highlight important information (to make things easier).</p>
+		<div class="check"></div>
+	</div>
+	<div class="setting q">
+		<p class="label">Display a list of questions after each document (like a damn school assignment. Might make things easier.)</p>
+		<div class="check"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>

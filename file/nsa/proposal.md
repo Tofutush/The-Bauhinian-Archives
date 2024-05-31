@@ -1,5 +1,3 @@
-# Project Proposal
-
 In order to maintain a competitive advantage in the field of quantum physics, I propose a Project Boomerang aimed at the research of time-manipulation technologies and the creation of practical time-manipulation devices.
 
 Due to the sensitive nature of this project, a laboratory shall be set up in a confidential location in southern Bauhinia.

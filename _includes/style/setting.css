@@ -1,0 +1,23 @@
+.setting {
+	align-items: center;
+	border-bottom: 3px solid var(--color);
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	padding: 2rem 0;
+}
+
+.setting:last-child {
+	border-bottom: 0;
+}
+
+.label {
+	margin: 0;
+}
+
+.check {
+	aspect-ratio: 1;
+	background-color: #fff;
+	height: 2rem;
+	width: 2rem;
+}

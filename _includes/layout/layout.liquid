@@ -3,11 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bauhinian Archives{% if page.url != '/' %} | {{ title }}{% endif %}</title>
 <style>
 {% include "style/style.css" %}
+{% if page.url == '/setting/' %}
+	{% include "style/setting.css" %}
+{% endif %}
 </style>
 </head>
 <body>
-{{ content }}
+<div id="main">
+	<h1 id="title">{{ title }}</h1>
+	{{ content }}
+</div>
 </body>
 </html>
