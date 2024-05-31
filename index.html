@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@font-face {
+	font-family: courier prime;
+	src: url('./asset/font/CourierPrime-Regular.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-style: italic;
+	src: url('./asset/font/CourierPrime-Italic.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-weight: bold;
+	src: url('./asset/font/CourierPrime-Bold.ttf');
+}
+
+@font-face {
+	font-family: courier prime;
+	font-style: italic;
+	font-weight: bold;
+	src: url('./asset/font/CourierPrime-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: jinkai;
+	src: url('./asset/font/jinkai.ttf');
+}
+
+@font-face {
+	font-family: klee one;
+	src: url('./asset/font/KleeOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: klee one semibold;
+	src: url('./asset/font/KleeOne-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: lexend;
+	src: url('../../asset/font/Lexend.ttf');
+}
+
+:root {
+	--nsa: #F01ACE;
+	--nsa-bg: #fbf3fa;
+	--nsa-text: #41282f;
+	--nsa-select: #F561DC;
+	--sc: #20f;
+	--sc-bg: #f0eff8;
+	--sc-text: #2a273d;
+	--sc-select: #A294FF;
+}
+
+body {
+	background-color: #000;
+	font-size: 28px;
+	margin: 0;
+}
+
+/* docs */
+
+.doc {
+	hyphens: auto;
+	margin: 4rem auto;
+	max-width: 800px;
+	min-height: 1130px;
+	overflow: hidden;
+	padding: 4rem;
+}
+
+.doc-content {
+	z-index: 1;
+}
+
+.doc-content h1 {
+	text-decoration: underline;
+}
+
+.doc-content p {
+	text-indent: 2em;
+	line-height: 1.5;
+}
+
+.doc-content .signature {
+	margin-top: 4rem;
+}
+
+.doc-content .signature p {
+	text-align: right;
+	text-indent: 0;
+}
+
+.nsa {
+	background-color: var(--nsa-bg);
+	color: var(--nsa-text);
+	display: flex;
+	font-family: courier prime;
+	justify-content: center;
+}
+
+.nsa *::selection {
+	background-color: var(--nsa-select);
+	color: #000;
+}
+
+.nsa .doc-content h1 {
+	color: var(--nsa);
+}
+
+.nsa-stamp {
+	align-self: center;
+	filter: opacity(.1);
+	position: absolute;
+	z-index: 0;
+}
+
+.sc {
+	background-color: var(--sc-bg);
+	color: var(--sc-text);
+	font-family: josefin sans;
+}
+
+.sc *::selection {
+	background-color: var(--sc-select);
+	color: #000;
+}
+
+.sc-head {
+	align-items: center;
+	border-bottom: 4px solid var(--sc);
+	display: flex;
+	gap: 2rem;
+	justify-content: flex-end;
+	padding: 0 1rem 1rem 1rem;
+	user-select: none;
+}
+
+.sc-head > img {
+	height: 40px;
+}
+
+.sc-head > p {
+	color: var(--sc);
+	font-weight: 600;
+	letter-spacing: 3px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/* name colors */
+
+.name::selection {
+	color: #fff;
+}
+
+.firefly {
+	color: #E07250;
+}
+
+.hyrax {
+	color: #333;
+}
+
+.kangaroo {
+	color: #A36D1F;
+}
+
+.koala {
+	color: #7F8587;
+}
+
+.pegasus {
+	color: #21CEEA;
+}
+
+.bauhinia {
+	color: var(--nsa);
+}
+
+.starcorp {
+	color: var(--sc);
+}
+</style>
+</head>
+<body>
+
+<div class="doc nsa">
+	<div class="doc-content">
+		<h1>Project Proposal</h1>
+<p>In order to maintain a competitive advantage in the field of quantum physics, I propose a Project Boomerang aimed at the research of time-manipulation technologies and the creation of practical time-manipulation devices.</p>
+<p>Due to the sensitive nature of this project, a laboratory shall be set up in a confidential location in southern <span class="name bauhinia">Bauhinia</span>.</p>
+<p>Investment request has been sent to <span class="name starcorp">Starcorp</span>. They have taken an interest in this project and have been sworn to secrecy under the condition that they would appoint the Heads of Research. I did not object.</p>
+<div class="signature">
+<p><span class="name firefly">Firefly</span>, Deputy Director of Operations</p>
+<p>2011 November 10<sup>th</sup></p>
+</div>
+	</div>
+	<img class="nsa-stamp" src="./asset/img/nsastampc.svg"/>
+</div>
+
+<div class="doc nsa">
+	<div class="doc-content">
+		<p>Permission to carry out Project Boomerang is granted. Please conduct background checks on all personnel involved in the laboratory.</p>
+<div class="signature">
+<p><span class="name pegasus">Pegasus</span>, Director of Intelligence</p>
+<p>2011 November 11<sup>th</sup></p>
+</div>
+	</div>
+	<img class="nsa-stamp" src="./asset/img/nsastampc.svg"/>
+</div>
+
+<div class="doc sc">
+	<div class="sc-head">
+		<img src="./asset/img/sclogo.svg"/>
+		<p><span class="name starcorp">Starcorp</span></p>
+	</div>
+	<div class="doc-content">
+		<h1><span class="name starcorp">Starcorp</span> investment</h1>
+<p>We've decided to invest in Project Boomerang. Apparantly the <span class="name bauhinia">NSAB</span> is counting on us for all the money now.</p>
+<p>We told them to appoint <span class="name koala">Koala</span> as the lead scientist and <span class="name kangaroo">Kangaroo</span> as the co-lead. Although I think that even if we didn't say anything they would've appointed them anyways. Nobody would look anywhere else when it comes to quantum gimmicks.</p>
+<p>I chose Robin because I know him personally and admire his talent. He isn't from the University of Flower City, so I don't really know how <span class="name koala">Koala</span> and <span class="name kangaroo">Kangaroo</span> would react to that. I just hope they would recognize him instead of doing some furious gatekeeping. They don't seem like that kind of people.</p>
+<div class="signature">
+<p><span class="name hyrax">Hyrax</span></p>
+<p>2011 November 10<sup>th</sup></p>
+</div>
+	</div>
+</div>
+</body>
+</html>
