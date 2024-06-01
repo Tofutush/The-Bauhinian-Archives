@@ -12,9 +12,20 @@
 </style>
 </head>
 <body>
+<img id="fix-bauhinia" src="/asset/img/bauhinia.svg"/>
+<img id="fix-starcorp" src="/asset/img/sclogo.svg"/>
+<div id="nav">
+	<ul>
+		<li><a href="about">About</a></li>
+		<li><a href="setting">Settings</a></li>
+	</ul>
+</div>
 <div id="main">
 	<h1 id="title">{{ title }}</h1>
 	{{ content }}
 </div>
+<script>
+	{% include 'script/script.js' %}
+</script>
 </body>
 </html>
