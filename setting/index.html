@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Bauhinian Archives</title>
+<title>The Bauhinian Archives | Settings</title>
 <style>
 @font-face {
 	font-family: courier prime;
@@ -238,6 +238,36 @@ body {
 	color: var(--sc);
 }
 
+	.setting {
+	align-items: center;
+	border-bottom: 3px solid var(--color);
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	padding: 2rem 0;
+}
+
+.setting:last-child {
+	border-bottom: 0;
+}
+
+.label {
+	margin: 0;
+}
+
+.check {
+	aspect-ratio: 1;
+	background-color: #fff;
+	border: 4px solid #fff;
+	height: 2rem;
+	outline: 4px solid var(--main);
+	width: 2rem;
+}
+
+.check.checked {
+	background-color: var(--main);
+}
+
 </style>
 </head>
 <body>
@@ -250,48 +280,121 @@ body {
 	</ul>
 </div>
 <div id="main">
-	<h1 id="title">The Bauhinian Archives</h1>
+	<h1 id="title">Settings</h1>
 	
-<div class="doc nsa">
-	<div class="doc-content">
-		<p>In order to maintain a competitive advantage in the field of quantum physics, I propose a Project Boomerang aimed at the research of time-manipulation technologies and the creation of practical time-manipulation devices.</p>
-<p>Due to the sensitive nature of this project, a laboratory shall be set up in a confidential location in southern Bauhinia.</p>
-<p>Investment request has been sent to Starcorp. They have taken an interest in this project and have been sworn to secrecy under the condition that they would appoint the Heads of Research. I did not object.</p>
-<div class="signature">
-<p>Firefly, Deputy Director of Operations</p>
-<p>2011 November 10<sup>th</sup></p>
-</div>
-	</div>
-	<img class="nsa-stamp" src="./asset/img/nsastampc.svg"/>
+<p>(Refresh to take effect.)</p>
+
+<div id="settings">
+	
 </div>
 
-<div class="doc nsa">
-	<div class="doc-content">
-		<p>Permission to carry out Project Boomerang is granted. Please conduct background checks on all personnel involved in the laboratory.</p>
-<div class="signature">
-<p>Pegasus, Director of Intelligence</p>
-<p>2011 November 11<sup>th</sup></p>
-</div>
-	</div>
-	<img class="nsa-stamp" src="./asset/img/nsastampc.svg"/>
-</div>
+<script>
+class Setting {
+	constructor(parent) {
+		this.parent = parent;
+		this.div = elt('div', {className: 'setting'});
+		this.parent.appendChild(this.div);
+	}
+	addLabel(label) {
+		this.div.appendChild(elt('p', {className: 'label'}, label));
+		return this;
+	}
+	addCheckbox(cb) {
+		let ch = elt('div', {className: 'check'});
+		cb(ch);
+		this.div.appendChild(ch);
+		return this;
+	}
+	// addInput(type, cb) {
+	// 	let ipt = elt('input', {className: 'setting-input', type: type});
+	// 	cb(ipt);
+	// 	this.div.appendChild(ipt);
+	// 	return this;
+	// }
+	// addDpdn(cb) {
+	// 	let dpdn = new Dropdown();
+	// 	cb(dpdn);
+	// 	this.div.appendChild(dpdn.div);
+	// 	return this;
+	// }
+	onChange(cb) {
+		this.div.addEventListener('change', cb);
+	}
+	deleteMyself() {
+		this.div.remove();
+	}
+}
 
-<div class="doc sc">
-	<div class="sc-head">
-		<img src="./asset/img/sclogo.svg"/>
-		<p>Starcorp</p>
-	</div>
-	<div class="doc-content">
-		<h1>Starcorp investment</h1>
-<p>We've decided to invest in Project Boomerang. Apparantly the NSAB is counting on us for all the money now.</p>
-<p>We told them to appoint Koala as the lead scientist and Kangaroo as the co-lead. Although I think that even if we didn't say anything they would've appointed them anyways. Nobody would look anywhere else when it comes to quantum gimmicks.</p>
-<p>I chose Robin because I know him personally and admire his talent. He isn't from the University of Flower City, so I don't really know how Koala and Kangaroo would react to that. I just hope they would recognize him instead of doing some furious gatekeeping. They don't seem like that kind of people.</p>
-<div class="signature">
-<p>Hyrax</p>
-<p>2011 November 10<sup>th</sup></p>
-</div>
-	</div>
-</div>
+let sdiv = document.getElementById('settings');
+console.log(sdiv);
+new Setting(sdiv)
+	.addLabel('Light / dark mode.')
+	.addCheckbox(ch => {
+		if(localStorage.getItem('mode') == 'light') {
+			ch.classList.add('checked');
+		}
+		ch.addEventListener('click', e => {
+			if(ch.classList.contains('checked')) {
+				ch.classList.remove('checked');
+				localStorage.setItem('mode', 'dark');
+			} else {
+				ch.classList.add('checked');
+				localStorage.setItem('mode', 'light');
+			}
+		});
+	});
+new Setting(sdiv)
+	.addLabel('Color in people\'s names (will definitely make text harder to read, but it\'s fun).')
+	.addCheckbox(ch => {
+		if(localStorage.getItem('color') == 'yes') {
+			ch.classList.add('checked');
+		}
+		ch.addEventListener('click', e => {
+			if(ch.classList.contains('checked')) {
+				ch.classList.remove('checked');
+				localStorage.setItem('color', 'no');
+			} else {
+				ch.classList.add('checked');
+				localStorage.setItem('color', 'yes');
+			}
+		});
+	});
+new Setting(sdiv)
+	.addLabel('Highlight important information (to make things easier).')
+	.addCheckbox(ch => {
+		if(localStorage.getItem('highlight') == 'yes') {
+			ch.classList.add('checked');
+		}
+		ch.addEventListener('click', e => {
+			if(ch.classList.contains('checked')) {
+				ch.classList.remove('checked');
+				localStorage.setItem('highlight', 'no');
+			} else {
+				ch.classList.add('checked');
+				localStorage.setItem('highlight', 'yes');
+			}
+		});
+	});
+new Setting(sdiv)
+	.addLabel('Display a list of questions after each document (like a damn school assignment. Might make things easier).')
+	.addCheckbox(ch => {
+		if(localStorage.getItem('question') == 'yes') {
+			ch.classList.add('checked');
+		}
+		ch.addEventListener('click', e => {
+			if(ch.classList.contains('checked')) {
+				ch.classList.remove('checked');
+				localStorage.setItem('question', 'no');
+			} else {
+				ch.classList.add('checked');
+				localStorage.setItem('question', 'yes');
+			}
+		});
+	});
+
+function elt(type,props,...children){let dom=document.createElement(type);if(props)Object.assign(dom,props);for(let child of children){if(typeof child!="string")dom.appendChild(child);else dom.appendChild(document.createTextNode(child));}return(dom);}
+
+</script>
 </div>
 <script>
 	let root = document.querySelector(':root');
